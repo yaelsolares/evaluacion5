@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Tarea 5</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <header>
+            <h1>Ejercicios de coches</h1>
+        </header>
+        <div>
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Marca del coche</label>
+                  <input type="text" class="form-control" id="name" placeholder="Ejemplo: Tesla, Fiat, Seat, etc...">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Modelo del coche</label>
+                    <input type="text" class="form-control" id="model" placeholder="Ejemplo: Toledo, Serie 1, etc...">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Color del coche</label>
+                    <input type="text" class="form-control" id="color" placeholder="Ejemplo: Blanco, Negro, Azul, etc...">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Año del coche</label>
+                    <input type="number" class="form-control" id="year" placeholder="Ejemplo: 2020, 2019, 2018, etc...">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Precio del coche</label>
+                    <input type="number" class="form-control" id="price" placeholder="Ejemplo: 200, 000, 150 000, etc...">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+              </form>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Año</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="users-table-body">
+                <!--Filas del coche-->
+            </tbody>
+        </table>
+    </div>
+    <script src="./cars.js"></script>
+</body>
+</html>
