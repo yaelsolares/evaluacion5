@@ -12,7 +12,7 @@
             <h1>Ejercicios de coches</h1>
         </header>
         <div>
-            <form>
+            <form onsubmit="event.preventDefault(), updateCar()">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Marca del coche</label>
                   <input type="text" class="form-control" id="name" placeholder="Ejemplo: Tesla, Fiat, Seat, etc...">
@@ -47,10 +47,14 @@
                     <th>Color</th>
                     <th>Año</th>
                     <th>Precio</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
-            <tbody id="users-table-body">
-                <!--Filas del coche-->
+            <tbody id="t-body">
+                <tr>
+                  <td></td>
+                </tr>
             </tbody>
         </table>
     </div>
