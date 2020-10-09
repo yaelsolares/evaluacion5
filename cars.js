@@ -31,12 +31,23 @@ function printCars() {
     const tbody = document.getElementById('t-body');
     tbody.innerHTML = ''
     cars.forEach ((car) => {
-          tbody.innerHTML += '<tr><td>' + car.name + '</td><td>' + car.model + '</td><td>' + car.color +'</td><td>' + car.year + '</td><td>' + car.price + '</td><td><button class="btn btn-warning" onclick="editCar('+ car.id +')">Editar</button>' + '</td><td><button class="btn btn-danger" onclick="deleteCar('+ car.id +')">Eliminar</button></td></tr>'
+          tbody.innerHTML += '<tr><td>' + car.name + '</td><td>' + car.model + '</td><td>' + car.color +'</td><td>' + car.year + '</td><td>' + car.price + '</td><td><button class="btn btn-warning" onclick="eneableEdition('+ car.id +')">Editar</button>' + '</td><td><button class="btn btn-danger" onclick="deleteCar('+ car.id +')">Eliminar</button></td></tr>'
     })
 }
 
-function editCar(identificador) {
-    //alert('¿Editamos el carro' + id + '?')
+function addCar () {
+    const tablebody = document.getElementById('t-body')
+    const name = document.getElementById('name').value;
+    const model = document.getElementById('model').value;
+    const color = document.getElementById('color').value;
+    const year = document.getElementById('year').value;
+    const price = document.getElementById('price').value;
+    const newCar = { id: cars.length + 1, name:name, model: model, color: color, year: year, price: price};
+    cars.push(newCar); 
+    printCars();
+}
+
+function eneableEdition(identificador) {
     const editingCar = cars.find((car) => car.id === identificador)
     const inputName = document.getElementById('name');
     const inputModel = document.getElementById('model');
@@ -55,15 +66,15 @@ function editCar(identificador) {
 
 function updateCar() {
     const newName = document.getElementById('name').value;
-    const newmodel = document.getElementById('model').value;
+    const newModel = document.getElementById('model').value;
     const newColor = document.getElementById('color').value;
     const newYear = document.getElementById('year').value;
     const newPrice = document.getElementById('price').value;
 
     if(idEditingCar === -1) {
-        alert('Selecciona un carro para editar')
         return;
     }
+    
     const idEditingCar = car.find((car) => car.id === idEditingCar)
     editingCar.name = newName;
     editingCar.model = newModel;
@@ -71,11 +82,17 @@ function updateCar() {
     editingCar.year = newYear;
     editingCar.price = newPrice;
 
+    document.getElementById('name'.value="")
+
     printCars();
 }
 
 function deleteCar(id) {
     alert('¿Eliminamos el carro' + id + '?')
+    const position = cars.findIndex((car) => car.id === id);
+    console.log(position)
+    cars.splice(position, 1);
+    printCars();
 }
 
 printCars();
